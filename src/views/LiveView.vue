@@ -36,7 +36,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://127.0.0.1/lives/" + this.$route.params.id)
+      .get("https://api.creer.gamma410.win/lives/" + this.$route.params.id)
       .then((res) => {
         console.log(res);
         this.posts = res.data;

@@ -29,7 +29,7 @@ export default {
     post() {
       axios
         .post(
-          "http://127.0.0.1/post?" +
+          "https://api.creer.gamma410.win/post?" +
             "userName" +
             "=" +
             this.userName +

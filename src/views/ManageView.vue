@@ -7,7 +7,7 @@
         <p>ユーザー名: {{ post.userName }}</p>
         <p>ストリームキー: {{ post.videoTitleHex }}</p>
         <br />
-        <a :href="'http://127.0.0.1/delete?id=' + post.id">
+        <a :href="'https://api.creer.gamma410.win/delete?id=' + post.id">
           <button><span class="material-symbols-rounded">delete</span></button>
         </a>
       </div>
@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://127.0.0.1/")
+      .get("https://api.creer.gamma410.win/")
       .then((res) => {
         console.log(res);
         this.posts = res.data;

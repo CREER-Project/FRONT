@@ -25,7 +25,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://127.0.0.1/")
+      .get("https://api.creer.gamma410.win/")
       .then((res) => {
         console.log(res);
         this.posts = res.data;
