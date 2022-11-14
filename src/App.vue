@@ -22,6 +22,7 @@
 </template>
 
 <style>
+@import "../public/style/v3.css";
 header a {
   text-decoration: none;
 }
