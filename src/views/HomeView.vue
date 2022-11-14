@@ -1,18 +1,45 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <divbox>
+    <h1>{{ message }}</h1>
+    <for v-for="post in posts" :key="post.id">
+      <router-link :to="'/lives/' + post.id">
+        <div class="div">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.userName }}</p>
+        </div>
+      </router-link>
+    </for>
+  </divbox>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from "axios";
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      message: "Home",
+      posts: [],
+      len: 0,
+    };
+  },
+  mounted() {
+    axios
+      .get("http://127.0.0.1/")
+      .then((res) => {
+        console.log(res);
+        this.posts = res.data;
+        this.len = this.posts.length;
+      })
+      .catch((err) => {
+        this.posts = err;
+      });
+  },
+};
 </script>
+
+<style>
+divbox a {
+  text-decoration: none;
+}
+</style>
