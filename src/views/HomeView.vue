@@ -1,11 +1,10 @@
 <template>
   <divbox>
-    <h1>{{ message }}</h1>
     <for v-for="post in posts" :key="post.id">
       <router-link :to="'/lives/' + post.id">
         <div class="div">
           <h2>{{ post.title }}</h2>
-          <p>{{ post.userName }}</p>
+          <p>{{ post.tag }}</p>
         </div>
       </router-link>
     </for>
@@ -18,14 +17,13 @@ import axios from "axios";
 export default {
   data() {
     return {
-      message: "Home",
       posts: [],
       len: 0,
     };
   },
   mounted() {
     axios
-      .get("https://api.creer.gamma410.win/")
+      .get("http://192.168.1.11/")
       .then((res) => {
         console.log(res);
         this.posts = res.data;

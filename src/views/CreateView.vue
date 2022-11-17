@@ -2,60 +2,65 @@
   <divbox>
     <h1>{{ message }}</h1>
     <div class="div">
-      <p>ユーザー名</p>
-      <input v-model="userName" type="text" placeholder="ユーザー名を入力" />
-      <p>タイトル</p>
-      <input v-model="title" type="text" placeholder="タイトルを入力" />
-      <p>詳細</p>
-      <textarea v-model="videoDetail" placeholder="詳細を入力" rows="5"></textarea>
-      <button v-if="userName&&title&&videoDetail" v-on:click="post()">ライブを作成</button>
+      <form
+        :action=url
+        method="POST"
+        enctype="multipart/form-data"
+        autocomplete="off"
+      >
+        <p>タイトル</p>
+        <input
+          name="title"
+          v-model="title"
+          type="text"
+          placeholder="タイトルを入力"
+        />
+        <p>SNSタグ</p>
+        <input
+          name="tag"
+          v-model="tag"
+          type="text"
+          placeholder="SNSタグを追加 (#を除いて)"
+        />
+        <p>詳細</p>
+        <textarea
+          name="videoDetail"
+          v-model="videoDetail"
+          placeholder="詳細を入力"
+          rows="5"
+        ></textarea>
+        <input
+          v-if="tag && title && videoDetail"
+          type="submit"
+          value="ライブを作成"
+          v-on="post()"
+          />
+      </form>
     </div>
   </divbox>
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   data() {
     return {
       message: "CreateLive",
-      userName: "",
+      tag: "",
       title: "",
-      videoDetail: ""
+      videoDetail: "",
+      url: ""
     };
   },
   methods: {
     post() {
-      axios
-        .post(
-          "https://api.creer.gamma410.win/post?" +
-            "userName" +
-            "=" +
-            this.userName +
-            "&" +
-            "title" +
-            "=" +
-            this.title +
-            "&" +
-            "videoDetail" +
-            "=" +
-            this.videoDetail
-        )
-        .then((response) => {
-          console.log(response);
-          window.location.replace('/');
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+      this.url = "http://192.168.1.11/post?tag=" + this.tag + "&title=" + this.title + "&videoDetail=" + this.videoDetail
+     },
   },
 };
 </script>
 
 <style>
-button {
+input[type=submit] {
   width: 100%;
 }
 </style>

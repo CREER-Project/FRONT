@@ -1,0 +1,15 @@
+{
+    "name": "CRÉER",
+    "short_name": "CRÉER",
+    "icons": [
+      {
+        "src": "./img/icon.png",
+        "sizes": "945x945",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF"
+  }

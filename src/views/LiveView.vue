@@ -2,7 +2,7 @@
   <divbox>
     <VideoPlayer :options="videoOptions" />
     <h2>{{ posts[0].title }}</h2>
-    <p>{{ posts[0].userName }}</p>
+    <p>{{ posts[0].tag }}</p>
     <div class="div">
       <p>{{ posts[0].videoDetail }}</p>
     </div>
@@ -36,7 +36,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://api.creer.gamma410.win/lives/" + this.$route.params.id)
+      .get("http://192.168.1.11/lives/" + this.$route.params.id)
       .then((res) => {
         console.log(res);
         this.posts = res.data;

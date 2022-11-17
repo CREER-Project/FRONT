@@ -18,13 +18,6 @@ const routes = [
     }
   },
   {
-    path: '/studio',
-    name: 'studio',
-    component: function () {
-      return import('../views/StudioView.vue')
-    }
-  },
-  {
     path: '/create',
     name: 'create',
     component: function () {
@@ -32,7 +25,7 @@ const routes = [
     }
   },
   {
-    path: '/manage',
+    path: '/manage/:id',
     name: 'manage',
     component: function () {
       return import('../views/ManageView.vue')

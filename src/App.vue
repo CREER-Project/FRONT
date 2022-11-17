@@ -3,7 +3,7 @@
 
     <header>
       <a href="/"><h1>CRÉER</h1></a>
-      <p>Prott Ver</p>
+      <p>var 2.0</p>
     </header>
 
     <main>
@@ -15,11 +15,12 @@
 
     <menu>
       <router-link to="/"><span class="material-symbols-rounded">home</span></router-link>
-      <router-link to="/studio"><span class="material-symbols-rounded">hub</span></router-link>
+      <router-link to="/create"><span class="material-symbols-rounded">create</span></router-link>
     </menu>
     
   </divbox>
 </template>
+
 
 <style>
 @import "../public/style/v3.css";
