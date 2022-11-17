@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     post() {
-      this.url = "http://192.168.1.11/post?tag=" + this.tag + "&title=" + this.title + "&videoDetail=" + this.videoDetail
+      this.url = "https://api.creer.gamma410.win/post?tag=" + this.tag + "&title=" + this.title + "&videoDetail=" + this.videoDetail
      },
   },
 };

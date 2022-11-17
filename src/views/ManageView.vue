@@ -7,7 +7,7 @@
         <p>RTMPサーバー: rtmp://live.gamma410.win</p>
         <p>ストリームキー: {{ posts.videoTitleHex }}</p>
         <br />
-        <a :href="'http://192.168.1.11/delete?id=' + posts.id">
+        <a :href="'https://api.creer.gamma410.win/delete?id=' + posts.id">
           <button><span class="material-symbols-rounded">delete</span></button>
         </a>
       </div>
@@ -27,7 +27,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://192.168.1.11/search/" + this.$route.params.id)
+      .get("https://api.creer.gamma410.win/search/" + this.$route.params.id)
       .then((res) => {
         console.log(res);
         this.posts = res.data;

@@ -23,7 +23,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://192.168.1.11/")
+      .get("https://api.creer.gamma410.win/")
       .then((res) => {
         console.log(res);
         this.posts = res.data;
