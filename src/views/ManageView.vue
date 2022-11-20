@@ -4,7 +4,7 @@
       <div class="div">
         <h2>{{ posts.title }}</h2>
         <p>SNSタグ: {{ posts.tag }}</p>
-        <p>RTMPサーバー: rtmp://live.gamma410.win</p>
+        <p>RTMPサーバー: rtmp://live.gamma410.win/live</p>
         <p>ストリームキー: {{ posts.videoTitleHex }}</p>
         <br />
         <a :href="'https://api.creer.gamma410.win/delete?id=' + posts.id">
